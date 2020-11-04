@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k0N-EH-gFx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="3pA-Xz-6l8">
+            <objects>
+                <navigationController id="k0N-EH-gFx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mXS-qN-obM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8xg-Cb-WZz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiH-90-mEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-870" y="118"/>
+        </scene>
+        <!--Bitcoin Price Tracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitcoinPriceTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btc" translatesAutoresizingMaskIntoConstraints="NO" id="jrM-A8-VEh">
+                                <rect key="frame" x="50" y="291" width="314" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jrM-A8-VEh" secondAttribute="height" multiplier="1:1" id="s3R-Qa-YxD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$6,000,234.56" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yAh-H5-9sO">
+                                <rect key="frame" x="10" y="179.5" width="394" height="101.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="85"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₠43,225.89" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrL-yr-qI1">
+                                <rect key="frame" x="10" y="615" width="394" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥345.78" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6g-2m-xan">
+                                <rect key="frame" x="10" y="664.5" width="394" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jrM-A8-VEh" secondAttribute="trailing" constant="50" id="0Rj-kQ-cAM"/>
+                            <constraint firstItem="jrM-A8-VEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="5dk-1R-zeI"/>
+                            <constraint firstItem="M6g-2m-xan" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="7uf-XU-KrL"/>
+                            <constraint firstItem="yAh-H5-9sO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="9ck-wZ-H6B"/>
+                            <constraint firstItem="jrM-A8-VEh" firstAttribute="top" secondItem="yAh-H5-9sO" secondAttribute="bottom" constant="10" id="JS6-Je-Rgr"/>
+                            <constraint firstItem="xrL-yr-qI1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NIL-lr-BBI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yAh-H5-9sO" secondAttribute="trailing" constant="10" id="P52-vr-5nh"/>
+                            <constraint firstItem="yAh-H5-9sO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QFu-Y5-G1V"/>
+                            <constraint firstItem="xrL-yr-qI1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RbF-9n-HhI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M6g-2m-xan" secondAttribute="trailing" constant="10" id="XtT-dH-Ifr"/>
+                            <constraint firstItem="M6g-2m-xan" firstAttribute="top" secondItem="xrL-yr-qI1" secondAttribute="bottom" constant="10" id="eFp-pX-liy"/>
+                            <constraint firstItem="M6g-2m-xan" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gYg-g0-aE7"/>
+                            <constraint firstItem="jrM-A8-VEh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="joO-as-nP6"/>
+                            <constraint firstItem="xrL-yr-qI1" firstAttribute="top" secondItem="jrM-A8-VEh" secondAttribute="bottom" constant="10" id="jqt-Rt-e6e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xrL-yr-qI1" secondAttribute="trailing" constant="10" id="kbb-Yl-ghI"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Bitcoin Price Tracker" id="cUb-8Z-6TP">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="refresh" id="oKY-m2-O5T">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="nVv-ih-TzM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eurLabel" destination="xrL-yr-qI1" id="Qpx-9l-N58"/>
+                        <outlet property="jpyLabel" destination="M6g-2m-xan" id="RT0-hg-4qB"/>
+                        <outlet property="usdLabel" destination="yAh-H5-9sO" id="Kne-YS-vhd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btc" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
